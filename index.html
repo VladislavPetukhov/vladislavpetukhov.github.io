@@ -1,1 +1,177 @@
-<html><body><h1>Topdeck Duel Support Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topdeck Duel — Official Legal Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #1f2330;
+      --accent: #c9a84c;
+      --accent-dim: rgba(201,168,76,0.12);
+      --text: #d4d8e8;
+      --muted: #6b7394;
+      --heading: #eef0f8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Background grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: auto;
+      padding: 80px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    header {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .app-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 auto 28px;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s ease 0.15s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      background: var(--surface);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.15);
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      padding: 32px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.6s ease 0.30s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 580px) {
+      .container { padding: 48px 20px; }
+      .btn-group { flex-direction: column; width: 100%; max-width: 320px; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-label">One Ink Studio</div>
+      <h1>Topdeck Duel</h1>
+      <div class="divider"></div>
+      <p class="subtitle">Official legal portal. Please review our terms and policies regarding the use of the Application.</p>
+    </header>
+
+    <div class="btn-group">
+      <a href="terms-and-conditions.html" class="btn">Terms & Conditions</a>
+      <a href="privacy-policy.html" class="btn">Privacy Policy</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 One Ink Studio. All rights reserved.</p>
+  </footer>
+</body>
+</html>
