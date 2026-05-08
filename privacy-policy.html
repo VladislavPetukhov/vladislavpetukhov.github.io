@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Topdeck Duel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #1f2330;
+      --accent: #c9a84c;
+      --accent-dim: rgba(201,168,76,0.12);
+      --text: #d4d8e8;
+      --muted: #6b7394;
+      --heading: #eef0f8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Background grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 72px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .app-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .effective-date {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin: 28px 0;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 52px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    section:nth-child(2)  { animation-delay: 0.05s; }
+    section:nth-child(3)  { animation-delay: 0.10s; }
+    section:nth-child(4)  { animation-delay: 0.15s; }
+    section:nth-child(5)  { animation-delay: 0.20s; }
+    section:nth-child(6)  { animation-delay: 0.25s; }
+    section:nth-child(7)  { animation-delay: 0.30s; }
+    section:nth-child(8)  { animation-delay: 0.35s; }
+    section:nth-child(9)  { animation-delay: 0.40s; }
+    section:nth-child(10) { animation-delay: 0.45s; }
+    section:nth-child(11) { animation-delay: 0.50s; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* Cards for special sections */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    /* List styles */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* AI features grid */
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .ai-item {
+      background: var(--accent-dim);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+
+    .ai-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .ai-item p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Third party links */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .links-grid a {
+      display: block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 5px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .links-grid a:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+    }
+
+    /* Contact section */
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 24px 28px;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      animation: fadeUp 0.6s ease 0.55s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 580px) {
+      .container { padding: 48px 20px 80px; }
+      .ai-grid { grid-template-columns: 1fr; }
+      .links-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="app-label">Topdeck Duel</div>
+      <h1>Privacy Policy</h1>
+      <div class="divider"></div>
+      <p>This policy applies to the <strong style="color:var(--heading);font-weight:500;">Topdeck Duel</strong> mobile application, developed by <strong style="color:var(--heading);font-weight:500;">One Ink Studio</strong> as a freemium service, provided "AS IS".</p>
+      <div class="effective-date">Effective date: April 13, 2026</div>
+    </header>
+
+    <section>
+      <h2>Information You Provide</h2>
+      <p>The Application acquires information you supply when you download and register. Registration is not mandatory, though some features may be unavailable without it.</p>
+      <p>The Service Provider may use your information to contact you with important notices and marketing promotions from time to time.</p>
+    </section>
+
+    <section>
+      <h2>Information Collected Automatically</h2>
+      <p>The Application may collect certain information automatically, including:</p>
+      <ul>
+        <li>Type and unique ID of your mobile device</li>
+        <li>IP address of your mobile device</li>
+        <li>Mobile operating system and browser type</li>
+        <li>Usage patterns within the Application</li>
+      </ul>
+      <p style="margin-top:16px;">The Application does <strong style="color:var(--heading);font-weight:500;">not</strong> gather precise real-time location data.</p>
+    </section>
+
+    <section>
+      <h2>Artificial Intelligence Technologies</h2>
+      <p>The Application uses AI to enhance user experience. AI components may process your data in the following ways:</p>
+      <div class="ai-grid">
+        <div class="ai-item">
+          <strong>Personalization</strong>
+          <p>Analyzes usage patterns to tailor content to your preferences.</p>
+        </div>
+        <div class="ai-item">
+          <strong>Recommendations</strong>
+          <p>Suggests features and content based on your interactions.</p>
+        </div>
+        <div class="ai-item">
+          <strong>Automation</strong>
+          <p>Powers certain app features to automate tasks and improve efficiency.</p>
+        </div>
+        <div class="ai-item">
+          <strong>Data Protection</strong>
+          <p>All AI processing follows this policy and applicable laws.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Third-Party Access</h2>
+      <p>Only aggregated, anonymized data is periodically shared with external services. The Service Provider may also disclose information:</p>
+      <ul>
+        <li>As required by law or legal process (e.g. subpoena)</li>
+        <li>To protect rights, safety, or investigate fraud</li>
+        <li>With trusted service providers bound by this policy</li>
+      </ul>
+      <p style="margin-top:20px;">The Application uses the following third-party services, each with their own privacy policies:</p>
+      <div class="links-grid">
+        <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services</a>
+        <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener">AdMob</a>
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Analytics</a>
+        <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener">Firebase Crashlytics</a>
+        <a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener">Unity</a>
+        <a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener">GameAnalytics</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opt-Out</h2>
+      <p>You can stop all data collection at any time by uninstalling the Application using the standard uninstall process on your device or via the app marketplace.</p>
+    </section>
+
+    <section>
+      <h2>Data Retention</h2>
+      <p>User-provided data is retained for as long as you use the Application and for a reasonable period thereafter. Automatically collected data is retained for up to <strong style="color:var(--heading);font-weight:500;">24 months</strong>, after which it may be stored in aggregate form only.</p>
+      <p>To request deletion of your user-provided data, contact us at <a href="mailto:vladislavpetukhov.am@gmail.com" style="color:var(--accent);font-weight:500;">vladislavpetukhov.am@gmail.com</a>. Note that some data may be required for the Application to function properly.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <div class="card">
+        <p>The Application is not directed at anyone under the age of <strong style="color:var(--heading);font-weight:500;">13</strong>. The Service Provider does not knowingly collect personal information from children under 13.</p>
+        <p style="margin-top:12px;">If a child under 13 has provided personal information, it will be immediately deleted upon discovery. Parents or guardians who believe their child has submitted personal data should contact us immediately.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Security</h2>
+      <p>The Service Provider implements physical, electronic, and procedural safeguards to protect your information. Access is limited to authorized personnel who require it for development and operations. No security system can guarantee absolute protection against all breaches.</p>
+    </section>
+
+    <section>
+      <h2>Policy Changes</h2>
+      <p>This Privacy Policy may be updated from time to time. Changes will be reflected on this page with a new effective date. Continued use of the Application constitutes acceptance of any updates. We recommend reviewing this policy periodically.</p>
+    </section>
+
+    <section>
+      <h2>Your Consent</h2>
+      <p>By using the Application, you consent to the processing of your information as described in this Privacy Policy. "Processing" includes collecting, storing, using, combining, and disclosing information.</p>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <div class="contact-block">
+        <p>Questions about this Privacy Policy or our data practices? Reach out to the Service Provider:</p>
+        <p style="margin-top:12px;">📧 <a href="mailto:vladislavpetukhov.am@gmail.com">vladislavpetukhov.am@gmail.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>One Ink Studio · Topdeck Duel · Privacy Policy</p>
+    </footer>
+
+  </div>
+</body>
+</html>
